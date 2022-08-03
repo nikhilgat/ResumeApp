@@ -14,9 +14,32 @@ export class EditComponent implements OnInit {
   
   posts: any[] = [];
 
+ editpost:edit={id:1 ,name:"",phoneNo:"",address:"",email:""}
+
   loadPosts() {
-    this.http.get('http://localhost:2013/get').subscribe((posts: any) => {
+    this.http.get('http://localhost:8080/get').subscribe((posts: any) => {
       this.posts = posts;
     });
   }
+  uploadPost() {
+    this.http.put('http://localhost:8080/put', this.editpost).subscribe(
+      (res) => {
+        alert('Resume Updated Successfuly');
+        location.reload;
+        console.log(this.editpost);
+      },
+      (err) => {
+        alert('Error has occured when sending Input Check it once ');
+        location.reload;
+      }
+    );
+  }
+}
+
+export interface edit{
+  id:number
+  name:string
+  phoneNo:string
+  address:string
+  email:string
 }
