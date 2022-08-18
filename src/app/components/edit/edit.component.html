@@ -1,4 +1,4 @@
-
+<!-- 
   <div class="card" style="text-align: center;"> 
     <h1>
         resume
@@ -30,7 +30,30 @@
     <a routerLink="/main">
     <button (click)="uploadPost()">submit</button>
     </a>
-  </div>
+  </div> -->
 
+  <div class="form">
+    <div class="title">Resume</div>
+    <div class="subtitle">Edit your Resume</div>
+    <div class="input-container ic1">
+      <input id="Name" class="input" [(ngModel)]="editpost.name" type="text" placeholder=" " />
+      <div class="cut"></div>
+      <label for="firstname" class="placeholder"> Full Name</label>
+    </div>
+    <div class="input-container ic2">
+      <input id="phoneNo" class="input" [(ngModel)]="editpost.phoneNo" type="text" placeholder=" " />
+      <div class="cut cut-small"></div>
+      <label for="lastname" class="placeholder">Phone Number</label>
+    </div>
+    <div class="input-container ic2">
+      <input id="email" class="input" [(ngModel)]="editpost.email" type="text" placeholder=" " />
+      <div class="cut cut-short"></div>
+      <label for="email" class="placeholder">Email</label>
+    </div>
+    <button type="text" class="submit" (click)="uploadPost()">submit</button>
+  </div>
+  <a routerLink="/main" class="btn">
+    Back to Resume
+  </a>
 
 

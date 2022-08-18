@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { EditComponent } from './components/edit/edit.component';
 import { FormsModule } from '@angular/forms';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    EditComponent
+    EditComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
