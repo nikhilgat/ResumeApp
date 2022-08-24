@@ -22,6 +22,7 @@ export class EditComponent implements OnInit {
     });
   }
   uploadPost() {
+    if(this.editpost.name.length>0 && this.editpost.phoneNo.length>0 && this.editpost.address.length>0 && this.editpost.email.length>0){
     this.http.put('http://localhost:8080/put', this.editpost).subscribe(
       (res) => {
         alert('Resume Updated Successfuly');
@@ -34,6 +35,7 @@ export class EditComponent implements OnInit {
       }
     );
   }
+}
 }
 
 export interface edit{
