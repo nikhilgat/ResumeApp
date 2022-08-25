@@ -22,21 +22,23 @@ export class EditComponent implements OnInit {
     });
   }
   uploadPost() {
-    if(this.editpost.name.length>0 && this.editpost.phoneNo.length>0 && this.editpost.address.length>0 && this.editpost.email.length>0){
+    if(this.editpost.name.length>0 && this.editpost.phoneNo.length>0 && this.editpost.email.length>0){
     this.http.put('http://localhost:8080/put', this.editpost).subscribe(
       (res) => {
         alert('Resume Updated Successfuly');
-        location.reload;
+        location.reload();
         console.log(this.editpost);
       },
-      (err) => {
-        alert('Error has occured when sending Input Check it once ');
-        location.reload;
-      }
     );
   }
+  else
+    {
+      alert('Error has occured when sending Input Check it once ');
+      location.reload();
+    }
+  }
 }
-}
+
 
 export interface edit{
   id:number
